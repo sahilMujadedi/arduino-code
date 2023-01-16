@@ -18,9 +18,7 @@ byte BCDAlgo(byte inputByte) {
 		outputByte = outputByte << 1;
 		outputByte += bitRead(inputByte, 7 - i);
 
-    for (int j = 0; j < 4; j++) {
-      bitWrite(LSNibble, j, bitRead(outputByte, j));
-    }
+    LSNibble = outputByte & 0x0f;
 	}
   return outputByte;
 }
